@@ -3,14 +3,13 @@
 #include <string.h>
 #include <math.h>
 
-void matriz_to_string(int linhas, int colunas, int **matriz){
-    int l, k;
+void matriz_to_string(int linhas, int colunas, int *matriz){
+    int l;
 
-    for(l = 0; l < linhas;l++){
-        for(k = 0; k < colunas; k++){
-            printf("\t %d \t", matriz[l][k]);
-        }
-        printf("\n");
+    for(l = 0; l < linhas*colunas;l++){
+        printf("\t %d \t", *(matriz+l));
+        if (l > 0 && (l+1)%colunas == 0)
+           printf("\n");
     }
 }
 
@@ -24,10 +23,17 @@ int main()
     printf("Quantidade de colunas da matriz: ");
     scanf("%d", &j);
 
-    // Criando a matrz
-    //int matriz[i][j];
-    int matrix[3][2] = {{3, 5}, {6, 9}, {2, 12}};
+    // Criando a matriz
+    int mtz[i][j];
+    int l, k;
+    for (l = 0; l  < i; l++){
+        for (k = 0; k  < j; k++){
+            printf("Digite linha %d coluna %d: ", (l+1), (k+1));
+            scanf(" %d", &mtz[l][k]); 
+        }
+    }
+    
     // Mostrando a matriz
-    matriz_to_string(3, 2, matrix);
+    matriz_to_string(i, j, *mtz);
     
 }
