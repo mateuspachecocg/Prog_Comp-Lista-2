@@ -58,7 +58,6 @@ int main()
     // Lendo as notas de cada alunos:
     printf("Quantos alunos a turma tem: ");
     scanf(" %d", &n_alunos);
-    printf("%d ", n_alunos);
     
     struct aluno alunos[n_alunos];
     
