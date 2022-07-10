@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define true 1
-#define false 1
+#define false 0
 #define NOTAS_MAX 4
 /**** Crie um algoritmo para armazenar as quatro notas de uma turma de N alunos,
  * informado pelo usu rio. Como resultado, o algoritmo deve apresentar um

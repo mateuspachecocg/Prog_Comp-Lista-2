@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #define true 1
-#define false 1
+#define false 0
 
 /*** Elabore um algoritmo C para efetuar a corre‡Æo das provas dos alunos da disciplina 
    * de Programa‡Æo Computacional do curso de Engenharia da Computa‡Æo da UFC. 
