@@ -10,8 +10,17 @@
 int main() {
   
   int i;
-  for(i = 0; i <20; i += 2){
-      printf("\n%d ", i);
+  char c, gab[10];
+  printf("enter the ansquers:\n");
+  for(i = 0;i < 10; i++){
+    printf("Question %d: ", i+1);
+    while(1){
+      c = getchar();
+      if(c != '\n'){
+        gab[i] = c;
+        break;
+      }
+    }
   }
   
   return 0;
