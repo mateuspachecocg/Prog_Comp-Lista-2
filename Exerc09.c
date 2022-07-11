@@ -16,17 +16,18 @@ void matriz_to_string(int dim, int *matriz)
     }
 }
 
-int **trocandoLinhas(int dim, int l1, int l2, int mtz[][dim]){
-    int l, k, aux;
-    if(l1 > l2) {
-        k  = l2; l2 = l1; l1 = k;
-    }
+int *trocandoLinhas(int dim, int l1, int l2, int mtz[][dim]){
+    int l, k, temp;
     l1 = l1-1;
     l2 = l2-1;
     for(l = 0; l < dim;l++){
-        *((*mtz+l2)+l); 
+      for(k = 0; k < dim; k++){
+        temp = mtz[l1][k];
+        mtz[l1][k] = mtz[l2][k];
+        mtz[l2][k] = temp;
+      }
     }
-    return mtz;
+    return *mtz;
 }
 
 int main() {
@@ -56,7 +57,7 @@ int main() {
   printf("\nMatriz Original\n");
   printf("\n\n");
   matriz_to_string(m, *A);
-  **A = **trocandoLinhas(m, i, j, A);
+  **A = *trocandoLinhas(m, i, j, A);
 
   printf("\nMatriz Trocada");
   printf("\n\n");
