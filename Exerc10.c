@@ -50,5 +50,4 @@ void main(){
             printf("\nRAIZ 2: %.2f.", raiz_2);
             break;
         }
-
 }

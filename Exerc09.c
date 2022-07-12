@@ -5,14 +5,15 @@
 #define true 1
 #define false 0
 
-void matriz_to_string(int dim, int *matriz)
+void matriz_to_string(int dim,int mtz[][dim])
 {
-    int l;
+    int l, k;
     
-    for(l = 0; l < dim*dim;l++){
-        printf("\t %d \t", *(matriz+l));
-        if (l > 0 && (l+1)%dim == 0)
-           printf("\n");
+    for(l = 0; l < dim;l++){
+      for ((k = 0); k < dim; k++) {
+        printf("\t %d \t", mtz[l][k]);
+      }
+      printf("\n");
     }
 }
 
@@ -56,12 +57,12 @@ int main() {
   
   printf("\nMatriz Original\n");
   printf("\n\n");
-  matriz_to_string(m, *A);
+  matriz_to_string(m, A);
   **A = *trocandoLinhas(m, i, j, A);
 
   printf("\nMatriz Trocada");
   printf("\n\n");
-  matriz_to_string(m, *A);
+  matriz_to_string(m, A);
 
   return 0;
 }
